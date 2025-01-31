@@ -1,0 +1,119 @@
+.xfce4-panel#XfcePanelWindow{
+    border-radius:44px;
+    box-shadow:none;
+    -XfcePanelWindow-autohide-size:0;
+}
+.xfce4-panel#XfcePanelWindowHidden{
+    opacity:0;
+    background:transparent;
+}
+#actions-button{
+
+    color:rgba(235, 248, 255, 1);
+    background-color:rgba(86, 120, 136, .60);
+
+    font-size:16.75px;
+    font-weight:bold;
+    text-shadow:unset;
+
+    border:1.25px solid rgba(64, 78, 84, .14);
+    border-radius:18px;
+
+    margin:5px 3.5px;
+
+    opacity:.725;
+    padding:0 15.75px;
+
+}
+#actions-button:hover{
+    color:white;
+    background-color:rgba(36,74,82,.75);
+}
+#applicationmenu-button{
+    margin-right:2px;
+    padding:0 5px;
+    font-size:14px;
+}
+#sn-button{
+    background:rgba(154,196,208,.5);
+}
+#clock-button{
+
+    color:#11828D;
+    background-image:none;
+    background-color:rgba(222, 254, 249, .14);
+    background-origin:content-box;
+    background-clip:padding-box;
+
+    opacity:.95;
+    text-shadow:unset;
+
+    margin:4px 0px;
+    padding:0 14px;
+
+    border:1px solid rgba(54, 146, 136, .44);
+    border-radius:18px;
+}
+#clock-button:hover,
+#clock-button:checked
+{
+    background-color:rgba(36,144,152,.2);
+    text-shadow:0 0 1px whitesmoke;
+    color:white;
+}
+#clock-button:not(:hover) box{
+    background-color:transparent;
+}
+#whiskermenu-button {
+    margin:0 2px 0 4px;
+}
+#whiskermenu-button
+#whiksermenu-button:hover
+{
+    box-shadow:none;
+    text-shadow:none;
+    outline:none;
+}
+.xfce4-panel .tasklist .toggle{
+    background:transparent;
+    color:#2B8075;
+    font-size:14px;
+    font-family:'Hack Nerd';
+    border:1px groove transparent;
+    text-shadow:0 0 1px #A4CEDA;
+
+}
+
+.xfce4-panel .tasklist .toggle label{
+    margin-left:2px;
+    color: #EEF4F7;
+}
+.xfce4-panel .tasklist .toggle:hover,
+.xfce4-panel button:hover
+{
+    background: rgba(36, 144, 152, .244);
+    border-color: rgba(64, 110, 240, .1);
+}
+
+.xfce4-panel .tasklist .toggle:checked{
+    background: rgba(75, 139, 166, .33);
+    opacity:.95;
+}
+.xfce4-panel .tasklist .toggle:checked label{
+    color: #E8FFFF;
+    text-shadow:0 0 1px white;
+}
+.xfce4-panel button:hover {
+    opacity:0.95;
+    border-color:transparent;
+}
+#sn-button,
+#xfce4-notification-plugin,
+#xfce4-power-manager-plugin,
+#pulseaudio-button
+{
+    color:#4FA4B4;
+}
+VteTerminal, vte-terminal{
+    padding:1px;
+}
