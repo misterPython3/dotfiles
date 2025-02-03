@@ -25,7 +25,7 @@ tiling_drag modifier titlebar
 
 # exec keybinds
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -nb "#58387A" -nf "#E9D4F6" -sb "#D897EC" -sf "#1A0034"
 bindsym $mod+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 
@@ -50,6 +50,9 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+
+bindsym Mod1+Tab focus next
+bindsym Mod1+Shift+Tab focus prev
 
 
 bindsym $mod+Shift+h move left
@@ -102,14 +105,17 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # system action binds
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+Control+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
-gaps inner 14px
-gaps outer 8px
+gaps inner 8px
+gaps outer 4px
 
 mode "resize" {
         
@@ -118,10 +124,10 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
         
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
         
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -134,20 +140,31 @@ bar {
 	padding 6px 10px
 	colors {
 	    background #EFFDFF10
+	    separator #C7B8E0A8
 	}
 
+	workspace_min_width 24
 	tray_padding 1px
 
 	i3bar_command i3bar --transparency
-        # status_command i3status
+        status_command i3status --config ~/.config/i3status/config
+	
 }
 
-title_align center
-default_border none
-default_floating_border none
-for_window [all] border none
 
-client.focused #00000000 #7A6A8FDF #FFFFFF #808080 #A4A4A4
-client.focused_inactive #00000000 #4A345F78 #FFFFFF #808080 #A4A4A4
-client.unfocused #00000000 #4A345F78 #FFFFFF #808080 #A4A4A4
-client.background #00000000 #4A345F78 #FFFFFF #808080 #A4A4A4
+
+title_align center
+default_border normal 4
+default_floating_border normal 4
+for_window [all] border normal 4
+for_window [class="firefox-esr"] border none
+
+# default window
+client.background #FFFFFF00 #FFFFFF00 #FFFFFF #808080 #FFFFFF00
+# focused window
+client.focused #FFFFFF00 #9876ACA4 #FFFFFF #A274C048 #86749AA4
+# container unfocused child
+client.focused_inactive #FFFFFF00 #9074B488 #A4A4A4 #30103FA0 #FFFFFF00
+# unfocused window
+client.unfocused #FFFFFF00 #4A345FFF #A4A4A4 #4014F0 #634490
+
