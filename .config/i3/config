@@ -26,8 +26,9 @@ tiling_drag modifier titlebar
 
 
 # exec keybinds
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+d exec --no-startup-id dmenu_run -nb "#58387A" -nf "#E9D4F6" -sb "#D897EC" -sf "#1A0034"
+bindsym $mod+Return exec kitty
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
