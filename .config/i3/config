@@ -5,6 +5,8 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id xfsettingsd --replace --sm-client-disable
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-tile ~/Downloads/light_mountain_moon.jpg
 exec --no-startup-id ~/.config/picom/picom.sh
 
@@ -25,8 +27,10 @@ tiling_drag modifier titlebar
 
 # exec keybinds
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec --no-startup-id dmenu_run -nb "#58387A" -nf "#E9D4F6" -sb "#D897EC" -sf "#1A0034"
+#bindsym $mod+d exec --no-startup-id dmenu_run -nb "#58387A" -nf "#E9D4F6" -sb "#D897EC" -sf "#1A0034"
+bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 
 # tab binds
@@ -113,7 +117,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+Control+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-
 gaps inner 8px
 gaps outer 4px
 
@@ -135,21 +138,22 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bar {
-	position top
-	padding 6px 10px
-	colors {
-	    background #EFFDFF10
-	    separator #C7B8E0A8
-	}
+#bar {
 
-	workspace_min_width 24
-	tray_padding 1px
-
-	i3bar_command i3bar --transparency
-        status_command i3status --config ~/.config/i3status/config
+#	position top
+#	padding 6px 10px
+#	colors {
+#	    background #EFFDFF10
+#	    separator #C7B8E0A8
+#	}
+#
+#	workspace_min_width 24
+#	tray_padding 1px
+#
+#	i3bar_command i3bar --transparency
+#        status_command i3status --config ~/.config/i3status/config
 	
-}
+#}
 
 
 
