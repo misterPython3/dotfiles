@@ -1,0 +1,10 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin-latte.toml"
+]
+[font]
+normal = { family = "Iosevka", style = "Medium" }
+[keyboard]
+bindings = [
+    { key = "\\", mods = "Control | Shift", action = "ReceiveChar" }
+]

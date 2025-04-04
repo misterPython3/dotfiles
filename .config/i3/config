@@ -6,33 +6,39 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id xfsettingsd --replace --sm-client-disable
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-tile ~/Downloads/light_mountain_moon.jpg
+exec --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id feh --bg-tile ~/Downloads/flowers.jpg
+exec_always --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh ~/.config/i3/wallpapers/
+exec --no-startup-id xfwm4 --compositor=off
 exec --no-startup-id ~/.config/picom/picom.sh
 
 # wm variable
 set $refresh_i3status killall -SIGUSR1 i3status
 
-
+# set $border normal 3px
+set $border pixel 0
+#
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+#
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-
-
-
 # exec keybinds
 #bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+d exec --no-startup-id dmenu_run -nb "#58387A" -nf "#E9D4F6" -sb "#D897EC" -sf "#1A0034"
-bindsym $mod+Return exec kitty
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+t exec alacritty
+bindsym $mod+Shift+t exec alacritty -e tmux
+bindsym $mod+n exec alacritty -e /opt/nvim-linux64/bin/nvim
+bindsym $mod+d exec --no-startup-id rofi -application-fallback-icon "/usr/share/icons/Adwaita/scalable/categories/applications-system-symbolic.svg" -show drun
 bindsym $mod+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-
+# restart polybar
+bindsym $mod+Shift+p exec --no-startup-id ~/.config/polybar/launch.sh
+# randomize wallpaper
+bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh ~/.config/i3/wallpapers/
 
 # tab binds
 bindsym $mod+f fullscreen toggle
@@ -44,6 +50,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+c focus child
+
 
 # tab navigation binds
 bindsym $mod+h focus left
@@ -59,7 +66,6 @@ bindsym $mod+Right focus right
 bindsym Mod1+Tab focus next
 bindsym Mod1+Shift+Tab focus prev
 
-
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
@@ -70,12 +76,13 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-
 bindsym $mod+bracketright split h
 bindsym $mod+bracketleft split v
 
+
 # window action binds
 bindsym $mod+Shift+q kill
+
 
 # workspace binds
 set $ws1 "1"
@@ -98,7 +105,6 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
-
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -113,63 +119,81 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+
 # system action binds
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+Control+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-gaps inner 8px
-gaps outer 4px
-
+# resize
 mode "resize" {
         
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
         
         bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 5 px or 5 ppt
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
-        
+ 
+	bindsym plus gaps outer current minus 4px
+	bindsym minus gaps outer current plus 4px
+
+	bindsym Shift+plus gaps inner current minus 4px
+	bindsym Shift+minus gaps inner current plus 4px
+
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
-#bar {
 
-#	position top
-#	padding 6px 10px
-#	colors {
-#	    background #EFFDFF10
-#	    separator #C7B8E0A8
-#	}
-#
-#	workspace_min_width 24
-#	tray_padding 1px
-#
-#	i3bar_command i3bar --transparency
-#        status_command i3status --config ~/.config/i3status/config
-	
-#}
-
-
-
+# window decoration
 title_align center
-default_border normal 4
-default_floating_border normal 4
-for_window [all] border normal 4
+
+gaps inner 8px
+gaps outer 4px
+
+default_border $border
+default_floating_border $border
+
+for_window [all] border $border
 for_window [class="firefox-esr"] border none
 
-# default window
-client.background #FFFFFF00 #FFFFFF00 #FFFFFF #808080 #FFFFFF00
-# focused window
-client.focused #FFFFFF00 #9876ACA4 #FFFFFF #A274C048 #86749AA4
-# container unfocused child
-client.focused_inactive #FFFFFF00 #9074B488 #A4A4A4 #30103FA0 #FFFFFF00
-# unfocused window
-client.unfocused #FFFFFF00 #4A345FFF #A4A4A4 #4014F0 #634490
+#background
+set $container_border #FFFFFF
+set $container_bg #FFFFFF
+set $container_fg #000000
+set $container_indicator #FFFFFF
+set $container_child_border #FFFFFF
+#
 
+#focused child
+set $focused_border #E8D5F8CC
+set $focused_bg	#E8D5F8CC
+set $focused_fg	#000000
+set $focused_indicator #F4C8F4F0
+set $focused_child_border #E8D5F8CC
+
+#focused child of an unfocused container
+set $unfocused_container_border #FFFFFFA4
+set $unfocused_container_bg #FFFFFFA4
+set $unfocused_container_fg #484848
+set $unfocused_container_focused_child_indicator #F4C8F4F0
+set $unfocused_container_focused_child_border #FFFFFFA4
+
+#unfocused child of an unfocused container
+set $unfocused_sibling_border #FFFFFFA4
+set $unfocused_sibling_bg #FFFFFFA4
+set $unfocused_sibling_fg #484848
+set $unfocused_sibling_indicator #F4C8F4F0
+set $unfocused_sibling_unfocused_child_border #FFFFFFA4
+
+# class: container_border background text indicator child_border
+client.background $container_border $container_bg $container_fg $container_indicator $container_child_border
+client.focused $focused_border $focused_bg $focused_fg $focused_indicator $focused_child_border
+client.unfocused $unfocused_sibling_border $unfocused_sibling_bg $unfocused_sibling_fg $unfocused_sibling_indicator $unfocused_sibling_unfocused_child_border
+client.focused_inactive $unfocused_container_border $unfocused_container_bg $unfocused_container_fg $unfocused_container_focused_child_indicator $unfocused_container_focused_child_border
