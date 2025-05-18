@@ -28,8 +28,9 @@ tiling_drag modifier titlebar
 
 # exec keybinds
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+t exec kitty
-bindsym $mod+n exec kitty nvim
+bindsym $mod+t exec alacritty
+bindsym $mod+Shift+t exec alacritty -e tmux
+bindsym $mod+n exec alacritty -e /opt/nvim-linux64/bin/nvim
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png

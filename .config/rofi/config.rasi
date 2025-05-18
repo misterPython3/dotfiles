@@ -1,8 +1,9 @@
 configuration {
-    modes : [combi];
+    /* modes : [combi]; */
     show-icons: true;
-    modi: "window,run,ssh";
+    modi: "run,drun";
     font: "Hack Nerd Font 14";
+    sidebar-mode : true;
     timeout {
 	action: "kb-cancel";
 	delay:  0;
@@ -12,4 +13,22 @@ configuration {
 	sorting-method:    "name";
     }
 }
-
+window{
+    border-color: #00000000;
+    background-color: white;
+}
+box{
+    padding:12px 0 12px 0;
+    background-color:white;
+}
+textbox{
+    padding:12px 0 12px 0;
+    background-color:white;
+}
+scrollbar{
+    handle-color:grey;
+}
+listview{
+    padding:12px 0 12px 0;
+    columns : 3;
+}
