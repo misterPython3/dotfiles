@@ -1,0 +1,13 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/theme.toml"
+]
+[font]
+normal = { family = "FantasqueSansM Nerd Font", style = "Regular"}
+size = 11.75
+[keyboard]
+bindings = [
+    { key = "\\", mods = "Control | Shift", action = "ReceiveChar" }
+]
+[window]
+opacity = 0.55
