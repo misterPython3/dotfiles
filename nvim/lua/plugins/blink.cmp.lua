@@ -1,4 +1,3 @@
-local vim = vim
 return {
     'saghen/blink.cmp',
     version = '1.*',

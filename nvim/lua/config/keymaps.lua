@@ -1,5 +1,8 @@
 local vim = vim
-require("config.util.keymap_functions")
+local M_functions = require("config.util.keymap_functions")
+for key, value in pairs(M_functions) do
+    rawset(_G, key, value)
+end
 map({'n', 'i'},'<C-s>', f_apply(vim.api.nvim_command,'write'), { desc = 'Save File' })
 nimap("<C-j>", "<C-e>", d_desc"Scroll: Down")
 nimap("<C-k>", "<C-y>", d_desc"Scroll: Up")
@@ -30,6 +33,7 @@ map(
     d_opt{silent = false, desc="Toggle Command Line"}
 )
 nmap("<Leader>nh", cmd_t"nohl", d_desc"Turn off search highlights")
+nmap("<Leader>nb", cmd_t"enew", d_desc"New Buffer")
 
 nmap("<Leader>a", cmd_t"Alpha", d_desc"Alpha: Open Dashboard")
 nmap('<Leader>m', cmd_t"Mason", d_desc"Mason")
@@ -82,34 +86,37 @@ nmap('<Leader>bw', cmd_t"BufferOrderByWindowNumber", barbar_t"Order By Window Nu
 local buffer_t = formatter_d_desc"Buffer"
 nmap("<Leader>bq", cmd_t"bd", buffer_t"Close")
 nmap("<Leader>bQ", cmd_t"bufdo bwipeout", buffer_t"Close All")
+nmap("<Leader>bo", cmd_t"%bd|e#|bd#", buffer_t"Buffer Only")
 
 local oil = require('oil')
-nmap('<Leader>e', oil.toggle_float, d_desc"Oil: Toggle File Manager")
+nmap('<Leader>e', oil.toggle_float, d_desc"Oil: Toggle Float")
+nmap('<Leader>o', cmd_t"Oil", d_desc"Oil: Open Buffer")
+
+local tree_api = require("nvim-tree.api")
+local opt_t = formatter_opt_desc({noremap=true, silent=true, nowait=true},"NvimTree")
+nmap('<Leader>E', tree_api.tree.toggle, opt_t"Toggle")
 
 local persistence = require("persistence")
 local persistence_t = formatter_d_desc"Persistence"
 nmap("<leader>poc", persistence.load, persistence_t"Load session on cwd")
 nmap("<leader>pos", persistence.select, persistence_t"Select session")
 nmap("<leader>pol", f_apply(persistence.load, {last = true}), persistence_t"Load last session")
+local stop_session_and_wipe = function ()
+    persistence.stop()
+    for _, lsp_client in ipairs(vim.lsp.get_clients()) do
+	for buf_id, is_attached in pairs(lsp_client.attached_buffers) do
+	    if is_attached then
+	    	vim.lsp.buf_detach_client(buf_id, lsp_client.id)
+	    end
+	end
+	lsp_client:stop()
+    end
+    vim.cmd[[%bwipeout | echo "Session stopped" | Alpha | bd#]]
+end
+nmap("<leader>poq", function() coroutine.wrap(stop_session_and_wipe)() end, persistence_t"Stop session & wipeout")
 nmap("<leader>pq", function() vim.cmd[[echo "Session stopped"]];persistence.stop() end, persistence_t"Stop session")
 nmap("<leader>ps", function() vim.cmd[[echo "Session saved"]];persistence.save() end, persistence_t"Save session")
 
-
-local harpoon = require('harpoon')
-local harpoon_t = formatter_desc"Harpoon"
-nmap("<leader>=", function() harpoon:list():add() end, harpoon_t"Add Buffer")
-nimap("<A-S-0>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, harpoon_t"List Buffer")
-nimap("<A-S-1>", function() harpoon:list():select(1) end)
-nimap("<A-S-2>", function() harpoon:list():select(2) end)
-nimap("<A-S-3>", function() harpoon:list():select(3) end)
-nimap("<A-S-4>", function() harpoon:list():select(4) end)
-nimap("<A-S-5>", function() harpoon:list():select(5) end)
-nimap("<A-S-6>", function() harpoon:list():select(6) end)
-nimap("<A-S-7>", function() harpoon:list():select(7) end)
-nimap("<A-S-8>", function() harpoon:list():select(8) end)
-nimap("<A-S-9>", function() harpoon:list():select(9) end)
-nmap("<leader>[", function() harpoon:list():prev() end, harpoon_t"Previous Buffer")
-nmap("<leader>]", function() harpoon:list():next() end, harpoon_t"Next Buffer")
 
 local zenmode = require"zen-mode"
 nmap(
@@ -125,7 +132,7 @@ nmap(
 )
 
 require("icon-picker").setup({ disable_legacy_commands = true })
-local opts = { noremap = true, silent = true }
+opts = { noremap = true, silent = true }
 map("n", "<Leader><Leader>i", cmd_t"IconPickerNormal", opts)
 map("n", "<Leader><Leader>y", cmd_t"IconPickerYank", opts) --> Yank the selected icon into register
 -- map("i", "<C-e>i", cmd_t"IconPickerInsert", opts)
@@ -133,3 +140,9 @@ map("n", "<Leader><Leader>y", cmd_t"IconPickerYank", opts) --> Yank the selected
 local fterm = require"FTerm"
 nmap("<C-S-\\>", fterm.toggle, d_desc"FTerm: Toggle Terminal")
 map("t","<C-S-\\>", fterm.toggle, d_desc"FTerm: Toggle Terminal")
+if vim.g.neovide then
+    nimap('<A-{>', cmd_t"BufferMovePrevious", barbar_t"Move Left")
+    nimap('<A-}>', cmd_t"BufferMoveNext", barbar_t"Move Right")
+    nmap("<C-|>", fterm.toggle, d_desc"FTerm: Toggle Terminal")
+    map("t","<C-|>", fterm.toggle, d_desc"FTerm: Toggle Terminal")
+end

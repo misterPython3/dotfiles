@@ -36,17 +36,18 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-bindsym $mod+Shift+d exec --no-startup-id rofi -no-lazy-grab -modi "Select Wallpaper:~/.config/rofi/scripts/select-wallpaper.py" -show "Select Wallpaper"
+bindsym $mod+Shift+d exec --no-startup-id ~/.config/rofi/launch-scripts/theme-selector.sh
 
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec alacritty
 bindsym $mod+Shift+t exec alacritty -e tmux
-bindsym $mod+n exec alacritty -e /opt/nvim-linux64/bin/nvim
+bindsym $mod+n exec ~/.cargo/bin/neovide
 bindsym $mod+d exec --no-startup-id rofi -no-lazy-grab -application-fallback-icon "/usr/share/icons/Adwaita/scalable/categories/applications-system-symbolic.svg" -show drun
 bindsym $mod+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym $mod+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 # restart polybar
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/polybar/launch.sh
+bindsym $mod+Mod1+Shift+p exec --no-startup-id polybar-msg cmd restart
 bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
 # randomize wallpaper
 bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh ~/.config/i3/wallpapers/
@@ -135,7 +136,6 @@ bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+Control+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
 # resize
 mode "resize" {
         
@@ -143,17 +143,38 @@ mode "resize" {
         bindsym j resize grow height 5 px or 5 ppt
         bindsym k resize shrink height 5 px or 5 ppt
         bindsym l resize grow width 5 px or 5 ppt
+
+        bindsym Shift+h resize shrink width 1 px or 1 ppt
+        bindsym Shift+j resize grow height 1 px or 1 ppt
+        bindsym Shift+k resize shrink height 1 px or 1 ppt
+        bindsym Shift+l resize grow width 1 px or 1 ppt
+
         
         bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 5 px or 5 ppt
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
+
+        bindsym Shift+Left resize shrink width 1 px or 1 ppt
+        bindsym Shift+Down resize grow height 1 px or 1 ppt
+        bindsym Shift+Up resize shrink height 1 px or 1 ppt
+        bindsym Shift+Right resize grow width 1 px or 1 ppt
  
 	bindsym plus gaps outer current minus 4px
 	bindsym minus gaps outer current plus 4px
 
 	bindsym Shift+plus gaps inner current minus 4px
 	bindsym Shift+minus gaps inner current plus 4px
+
+        bindsym Mod1+h gaps horizontal current plus 5px
+        bindsym Mod1+l gaps horizontal current minus 5px
+        bindsym Mod1+j gaps vertical current plus 5px
+        bindsym Mod1+k gaps vertical current minus 5px
+
+        bindsym Mod1+Shift+h gaps horizontal current plus 1px
+        bindsym Mod1+Shift+l gaps horizontal current minus 1px
+        bindsym Mod1+Shift+j gaps vertical current plus 1px
+        bindsym Mod1+Shift+k gaps vertical current minus 1px
 
 	bindsym 0 gaps inner current set 0px, gaps outer current set 0px
 	bindsym Shift+0 gaps inner current set $default_inner_gap, gaps outer current set $default_outer_gap

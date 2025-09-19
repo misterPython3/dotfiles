@@ -7,7 +7,12 @@ return {
 	Lua = {
 	    diagnostics = {
 		disable = {
-		    "lowercase-global"
+		    "lowercase-global",
+		    "undefined-global"
+		},
+		globals = {
+		    "vim",
+		    "nvim"
 		}
 	    },
 	    runtime = {
