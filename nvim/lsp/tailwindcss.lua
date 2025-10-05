@@ -1,5 +1,9 @@
 return {
     workspace_required = true,
+    root_markers = {
+	'tailwind.config.js',
+	"package.json"
+    },
     root_dir = function(bufnr, on_dir)
 	local root_files = {
 	    "package.json",
