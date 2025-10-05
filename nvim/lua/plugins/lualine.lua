@@ -19,6 +19,12 @@ return {
 			return (recording == "" and "" or ("Recording@"..recording))
 		    end
 		}
+	    },
+	    lualine_c = {
+		{
+		    'filename',
+		    path = 4
+		}
 	    }
 	}
     }

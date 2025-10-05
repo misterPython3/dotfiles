@@ -28,7 +28,7 @@ return {
 	    dashboard.button("o","  Recently Opened Files", ":FzfLua oldfiles<CR>"),
 	    dashboard.button("n","󰈔  New File", ":ene <BAR> startinsert <CR>"),
 	    dashboard.button("f","󰱼  Search File", ":FzfLua files<CR>"),
-	    dashboard.button("e","  Oil: Open", function () require('oil').toggle_float() end),
+	    dashboard.button("e","  Oil: Open", function () require('oil').toggle_float() end),
 	    dashboard.button("E","󰙅  NvimTree: Toggle", function() require('nvim-tree.api').tree.toggle() end),
 	    dashboard.button("y","󰉓  Yazi: Open", ":Yazi<CR>"),
 	    dashboard.button("s","  Persistence: Select Session", function() require("persistence").select() end),

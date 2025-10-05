@@ -1,0 +1,63 @@
+configuration {
+    kb-cancel:"Super+d,Escape";
+    modes : [combi]; 
+    show-icons: true;
+    modi: "drun,run";
+    font: "Iosevka 15";
+    sidebar-mode : true;
+    timeout {
+	action: "kb-cancel";
+	delay: 0;
+    }
+    filebrowser {
+	directories-first: true;
+	sorting-method: "name";
+    }
+}
+window {
+    width:50%;
+    border:0;
+    border-radius:18px;
+    background-color:#FFFFFF;
+    padding:14px 14px;
+}
+mainbox{
+    background-color:#FFFFFF;
+    border-radius:8px;
+    margin:2px;
+}
+inputbar{
+    padding:6px 1%;
+    border:2px;
+    border-radius:44%;
+    margin:0 0 4px 0;
+}
+listview {
+    lines : 8;
+    border:0;
+    padding:4px;
+    spacing:4px;
+    margin:6px 14px;
+}
+element{
+    padding:8px 1.5%;
+    border:1px;
+    border-radius:12px;
+}
+element alternate.normal{
+    background-color:#FFFFFF;
+}
+element normal.normal{
+    background-color:#FFFFFF;
+}
+element-icon{
+    size:30px;
+    margin:0 3px 0 0;
+}
+element-text{
+    font:"Iosevka 17";
+    text-style:bold;
+}
+message{
+    background-color:#008080;
+}

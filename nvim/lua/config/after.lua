@@ -8,7 +8,6 @@ local roulette = {
     "nightfox",
     "duskfox",
     "catppuccin-macchiato",
-    "yorumi"
 }
 local pick = roulette[math.random(1, table.maxn(roulette))]
 if not vim.cmd.colorscheme(pick) then

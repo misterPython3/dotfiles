@@ -3,9 +3,7 @@ local M_functions = require("config.util.keymap_functions")
 for key, value in pairs(M_functions) do
     rawset(_G, key, value)
 end
-map({'n', 'i'},'<C-s>', f_apply(vim.api.nvim_command,'write'), { desc = 'Save File' })
-nimap("<C-j>", "<C-e>", d_desc"Scroll: Down")
-nimap("<C-k>", "<C-y>", d_desc"Scroll: Up")
+nimap('<C-s>', cmd_t"write", { desc = 'Save File' })
 nimap("<C-w>Q", cmd_t"q!", d_desc"Window: Close Override")
 
 local opts = {silent = true, noremap = true}
@@ -72,7 +70,7 @@ nimap('<A-7>', cmd_t"BufferGoto 7", barbar_t"Goto 7")
 nimap('<A-8>', cmd_t"BufferGoto 8", barbar_t"Goto 8")
 nimap('<A-9>', cmd_t"BufferGoto 9", barbar_t"Goto 9")
 nimap('<A-0>', cmd_t"BufferLast", barbar_t"Goto Last Buffer")
-nmap('<Leader>bp', cmd_t"BufferPin", barbar_t"Pin Buffer")
+nmap('<Leader>bP', cmd_t"BufferPin", barbar_t"Pin Buffer")
 nimap('<C-q>', cmd_t"BufferClose", barbar_t"Close")
 nimap('<C-S-q>', cmd_t"BufferClose!", barbar_t"Close Override")
 nmap('<Leader><A-p>',   cmd_t"BufferPick", barbar_t"Pick Buffer")
@@ -84,9 +82,9 @@ nmap('<Leader>bl', cmd_t"BufferOrderByLanguage", barbar_t"Order By Languge")
 nmap('<Leader>bw', cmd_t"BufferOrderByWindowNumber", barbar_t"Order By Window Number")
 
 local buffer_t = formatter_d_desc"Buffer"
-nmap("<Leader>bq", cmd_t"bd", buffer_t"Close")
-nmap("<Leader>bQ", cmd_t"bufdo bwipeout", buffer_t"Close All")
-nmap("<Leader>bo", cmd_t"%bd|e#|bd#", buffer_t"Buffer Only")
+nmap("<Leader>bq", cmd_t"bwipeout", buffer_t"Close")
+nmap("<Leader>bQ", cmd_t"%bwipeout!", buffer_t"Close All")
+nmap("<Leader>bo", cmd_t"%bwipeout! | e# | bwipeout!#", buffer_t"Buffer Only")
 
 local oil = require('oil')
 nmap('<Leader>e', oil.toggle_float, d_desc"Oil: Toggle Float")
@@ -111,9 +109,10 @@ local stop_session_and_wipe = function ()
 	end
 	lsp_client:stop()
     end
-    vim.cmd[[%bwipeout | echo "Session stopped" | Alpha | bd#]]
+    vim.cmd[[%bwipeout! | echo "Session stopped" | Alpha | bd#]]
 end
 nmap("<leader>poq", function() coroutine.wrap(stop_session_and_wipe)() end, persistence_t"Stop session & wipeout")
+nmap("<leader>poQ", function() persistence.save()coroutine.wrap(stop_session_and_wipe)() end, persistence_t"Save; Stop session & wipeout")
 nmap("<leader>pq", function() vim.cmd[[echo "Session stopped"]];persistence.stop() end, persistence_t"Stop session")
 nmap("<leader>ps", function() vim.cmd[[echo "Session saved"]];persistence.save() end, persistence_t"Save session")
 
