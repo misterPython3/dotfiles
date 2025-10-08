@@ -9,7 +9,7 @@ import shlex
 if len(sys.argv) > 1:
     file_path = os.getenv("ROFI_INFO")
     if path.exists(file_path):
-        sbp.run(shlex.split("feh --bg-tile") + [file_path])
+        sbp.run(shlex.split("xwallpaper --tile") + [file_path])
     os.exit(0)
 
 

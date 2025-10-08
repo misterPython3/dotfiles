@@ -28,4 +28,4 @@ fi
 wallpaper=$directory/$(printf "$images" | sed -n "$(shuf -i 1-$count -n 1)p")
 
 echo "$wallpaper" | tee -p $current_wallpaper_path 1>/dev/null 2>&1
-feh --bg-tile "$wallpaper"
+xwallpaper --tile "$wallpaper"
