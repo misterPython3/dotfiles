@@ -35,4 +35,4 @@ for (( i=0,output_length=1;1;i=(i+increment)%output_length ));do
     fi
     echo "$output"
     sleep $DELAY
-done
+done & wait

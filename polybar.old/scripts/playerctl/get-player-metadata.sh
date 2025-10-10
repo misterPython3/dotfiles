@@ -8,7 +8,7 @@ SEND_PLAY_BTN=0
 SEND_PAUSE_BTN=1
 PLAYER_FORMAT="{{artist}} - {{title}}"
 
-POLYBAR_PARENT_PID=$(pgrep -f "polybar $POLYBAR_PARENT")
+POLYBAR_PARENT_PID=$(pgrep -xf "polybar $POLYBAR_PARENT")
 if [[ $? -ne 0 ]];then
     echo "[$(date)] get-player-metadata.sh: Polybar \"$POLYBAR_PARENT\" instance not found." | tee -ap $LOG_FILE 1>/dev/null 2>&1
     exit 1
