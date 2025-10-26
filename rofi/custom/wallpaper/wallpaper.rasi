@@ -1,0 +1,137 @@
+@theme "~/.config/rofi/theme.rasi"
+configuration {
+    filebrowser {
+	directory : "/home/genes/.config/i3/wallpapers";
+	show-hidden : false;
+	command : "notify-send";
+    }
+}
+window{
+    background-color: @window-bg;
+    text-color: @window-fg;
+    border: @window-border-width;
+    border-color: @window-border-color;
+    border-radius: @window-radius;
+
+    padding:@window-padding;
+    margin:@window-margin;
+    fullscreen: false;
+    width : 75%;
+    height : 75%;
+    children : [ search-box, list-box];
+}
+search-box{
+    background-color: @search-box-bg;
+    text-color: @search-box-fg;
+    border: @search-box-border-width;
+    border-color: @search-box-border-color;
+
+    expand: false;
+    orientation: vertical;
+    children : [ entry ];
+}
+list-box{
+    background-color: @mainbox-bg;
+    text-color: @mainbox-fg;
+    border: @mainbox-border-width;
+    border-color: @mainbox-border-color;
+    border-radius: @mainbox-radius;
+    orientation: vertical;
+    children : [ listview ];
+    spacing:10;
+}
+listview{
+    background-color: @list-bg;
+    text-color: @list-fg;
+    fixed-columns:true;
+    columns:2;
+    flow : horizontal;
+    lines:2;
+    spacing:1em;
+}
+entry {
+    background-color: @search-box-bg;
+    placeholder-color: @search-box-fg;
+    text-color: @search-box-fg;
+
+    placeholder : "Search Wallpaper";
+}
+element {
+    background-color: transparent;
+    text-color: @element-fg;
+    border: @element-border-width;
+    border-color: @element-border-color;
+    border-radius: @element-radius;
+
+    margin:@element-margin;
+    spacing: 0;
+    height:256px;
+
+    orientation : vertical;
+    children : [element-icon, element-text];
+}
+element-text{
+    background-color: @normal-element-bg;
+    text-color: @normal-element-fg;
+    border: @normal-element-border-width;
+    border-color: @normal-element-border-color;
+    border-radius: @normal-element-radius;
+}
+element-icon{
+    background-color: @element-icon-bg;
+    size:calc((100% / 4) - 5%);
+    vertical-align:0.5;
+    horizontal-align:0.5;
+}
+element-text normal.normal{
+    background-color: @normal-element-bg;
+    text-color: @normal-element-fg;
+    border: @normal-element-border-width;
+    border-color: @normal-element-border-color;
+    border-radius: @normal-element-radius;
+
+}
+element-text alternate.normal{
+    background-color: @alternate-element-bg;
+    text-color: @alternate-element-fg;
+    border: @alternate-element-border-width;
+    border-color: @alternate-element-border-color;
+    border-radius: @alternate-element-radius;
+
+}
+element-text selected.normal,
+element-text alternate.selected.normal{
+    background-color: @selected-element-bg;
+    text-color: @selected-element-fg;
+    border: @selected-element-border-width;
+    border-color: @selected-element-border-color;
+    border-radius: @selected-element-radius;
+}
+element-icon selected.normal,
+element-icon alternate.selected.normal{
+    background-color: @selected-element-bg;
+    text-color: @selected-element-fg;
+}
+@media (enabled : env(PREVIEW, true)){
+    window{
+	width : 86%;
+	height : 82%;
+    }
+    preview-box {
+	background-color: @mainbox-bg;
+	children : [icon-current-entry];
+	padding:1em;
+	size: 80%;
+	expand:true;
+	vertical-align:0.5;
+    }
+    icon-current-entry{
+	expand:true;
+	background-color:transparent;
+	size:calc(50%);
+    }
+    list-box{
+	orientation:horizontal;
+	children : [listview,preview-box];
+    }
+}

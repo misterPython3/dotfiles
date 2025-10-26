@@ -1,0 +1,15 @@
+listview {
+    lines : 9;
+}
+button{
+    enabled: false;
+}
+element{
+    spacing:10;
+}
+element-text{
+    vertical-align: 0.5;
+}
+prompt{
+    enabled: false;
+}

@@ -1,0 +1,8 @@
+[global]
+width = (50, 300)
+height = (10, 225)
+origin = top-center
+alignment = center
+vertical_alignment = center
+frame_width = 2
+padding = 8

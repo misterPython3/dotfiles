@@ -1,63 +1,74 @@
-configuration {
-    kb-cancel:"Super+d,Escape";
-    modes : [combi]; 
-    show-icons: true;
-    modi: "drun,run";
-    font: "Iosevka 15";
-    sidebar-mode : true;
-    timeout {
-	action: "kb-cancel";
-	delay: 0;
-    }
-    filebrowser {
-	directories-first: true;
-	sorting-method: "name";
-    }
-}
-window {
-    width:50%;
-    border:0;
-    border-radius:18px;
-    background-color:#FFFFFF;
-    padding:14px 14px;
-}
-mainbox{
-    background-color:#FFFFFF;
-    border-radius:8px;
-    margin:2px;
-}
-inputbar{
-    padding:6px 1%;
-    border:2px;
-    border-radius:44%;
-    margin:0 0 4px 0;
-}
-listview {
-    lines : 8;
-    border:0;
-    padding:4px;
-    spacing:4px;
-    margin:6px 14px;
-}
-element{
-    padding:8px 1.5%;
-    border:1px;
-    border-radius:12px;
-}
-element alternate.normal{
-    background-color:#FFFFFF;
-}
-element normal.normal{
-    background-color:#FFFFFF;
-}
-element-icon{
-    size:30px;
-    margin:0 3px 0 0;
-}
-element-text{
-    font:"Iosevka 17";
-    text-style:bold;
-}
-message{
-    background-color:#008080;
+* {
+    window-bg: #FFF;
+    window-fg: #FFF;
+    window-border-color: #FFF;
+    window-border-width: 0;
+    window-radius: 0;
+
+    mainbox-bg: #FFF;
+    mainbox-fg: #FFF;
+    mainbox-border-color: #FFF;
+    mainbox-border-width: 0;
+    mainbox-radius: 0;
+    
+    search-box-bg: #FFF;
+    search-box-fg: #FFF;
+    search-box-border-color: #FFF;
+    search-box-border-width: 0;
+    search-box-radius: 0;
+
+    list-bg: #FFF;
+    list-fg: #FFF;
+    list-border-color: #FFF;
+    list-border-width: 0;
+    list-radius: 0;
+
+    element-bg: #FFF;
+    element-fg: #FFF;
+    element-border-color: #FFF;
+    element-border-width: 0;
+    element-radius: 0;
+
+    normal-element-bg: #FFF;
+    normal-element-fg: #FFF;
+    normal-element-border-color: #FFF;
+    normal-element-border-width: 0;
+    normal-element-radius: 0;
+
+    alternate-element-bg: #FFF;
+    alternate-element-fg: #FFF;
+    alternate-element-border-color: #FFF;
+    alternate-element-border-width: 0;
+    alternate-element-radius: 0;
+
+    selected-element-bg: #FFF;
+    selected-element-fg: #FFF;
+    selected-element-border-color: #FFF;
+    selected-element-border-width: 0;
+    selected-element-radius: 0;
+
+    button-bg: #FFF;
+    button-fg: #FFF;
+    button-border-color: #FFF;
+    button-border-width: 0;
+    button-radius: 0;
+
+    selected-button-bg: #FFF;
+    selected-button-fg: #FFF;
+    selected-button-border-color: #FFF;
+    selected-button-border-width: 0;
+    selected-button-radius: 0;
+    
+    window-padding: 0;
+    mainbox-padding: 0;
+    search-box-padding: 0;
+    list-padding: 0;
+    element-padding: 0;
+
+    window-margin: 0;
+    mainbox-margin: 0;
+    search-box-margin: 0;
+    list-margin: 0;
+    element-margin: 0;
+
 }

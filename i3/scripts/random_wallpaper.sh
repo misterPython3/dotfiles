@@ -8,7 +8,7 @@ fi
 if [[ -f $2 ]];then
     CURRENT_WALLPAPER_SYM=$2
 else 
-    CURRENT_WALLPAPER_SYM=~/.local/share/wallpaper/current_wallpaper
+    CURRENT_WALLPAPER_SYM=~/.local/state/wallpaper/current_wallpaper
 fi
 CURWAL_SYM_DIR=$(dirname $CURRENT_WALLPAPER_SYM)
 if [[ ! -d $CURWAL_SYM_DIR ]];then

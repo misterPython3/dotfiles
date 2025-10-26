@@ -1,31 +1,28 @@
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {
-	options = {
+    config = function()
+	require("lualine").setup{
 	    refresh = {
 		events = {
-		    'RecordingEnter',
-		    'RecordingLeave',
-		}
-	    }
-	},
-	sections = {
-	    lualine_a = {
-		'mode',
-		{
-		    function()
-			local recording = vim.fn.reg_recording()
-			return (recording == "" and "" or ("Recording@"..recording))
-		    end
-		}
+		    "RecordingEnter",
+		    "RecordingLeave",
+		},
 	    },
-	    lualine_c = {
-		{
-		    'filename',
-		    path = 4
-		}
-	    }
+	    sections = {
+		lualine_a = {
+		    "mode",
+		    function()
+			local rec = vim.fn.reg_recording()
+			return rec ~= "" and "Recording @"..rec or ""
+		    end,
+		},
+		lualine_x = {
+		    'encoding',
+		    'fileformat',
+		    'filetype'
+		},
+	    },
 	}
-    }
+    end,
 }

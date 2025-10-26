@@ -1,3 +1,0 @@
-return {
-	"yorumicolors/yorumi.nvim"
-}

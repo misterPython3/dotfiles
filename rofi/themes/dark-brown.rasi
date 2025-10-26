@@ -1,0 +1,87 @@
+* {
+    theme-dark:#0F0F08;
+    theme-light:#DDDEC0;
+    theme-mark-dark:#3F3F38;
+    theme-mark-light:#FDFEE0;
+    item-padding:4px;
+
+    window-bg: @theme-dark;
+    window-fg: @theme-light;
+    window-border-color: #FFF;
+
+    mainbox-bg: @theme-dark;
+    mainbox-fg: @theme-light;
+    mainbox-border-color: #FFF;
+    
+    search-box-bg: @theme-dark;
+    search-box-fg: @theme-light;
+    search-box-border-color: #FFF;
+
+    list-bg: @theme-dark;
+    list-fg: @theme-light;
+    list-border-color: #FFF;
+
+    element-bg: @theme-dark;
+    element-fg: @theme-light;
+    element-border-color: #FFF;
+
+    normal-element-bg: @theme-dark;
+    normal-element-fg: @theme-light;
+    normal-element-border-color: #FFF;
+
+    alternate-element-bg: @theme-dark;
+    alternate-element-fg: @theme-light;
+    alternate-element-border-color: #FFF;
+
+    selected-element-bg: @theme-light;
+    selected-element-fg: @theme-dark;
+    selected-element-border-color: @theme-light;
+    selected-element-border-width: 0;
+    selected-element-radius: 0;
+
+    button-bg: @theme-dark;
+    button-fg: @theme-light;
+    button-border-color: #FFF;
+
+    selected-button-bg: @theme-dark;
+    selected-button-fg: @theme-light;
+    selected-button-border-color: #FFF;
+
+    element-icon-bg: @theme-dark;
+    element-icon-size: 1.25em;
+
+    search-box-placeholder: "Search Application";
+
+    window-border-width: 0;
+    mainbox-border-width: 0;
+    search-box-border-width: 0;
+    element-border-width: 0;
+    list-border-width: 0;
+    normal-element-border-width: 0;
+    alternate-element-border-width: 0;
+    button-border-width: 0;
+    selected-button-border-width: 0;
+
+    window-radius: 0;
+    mainbox-radius: 0;
+    search-box-radius: 0;
+    list-radius: 0;
+    element-radius: 0;
+    normal-element-radius: 0;
+    alternate-element-radius: 0;
+    button-radius: 0;
+    selected-button-radius: 0;
+
+    window-padding: 2%;
+    mainbox-padding: 0;
+    search-box-padding: 0;
+    list-padding: 0;
+    element-padding: @item-padding;
+
+    window-margin: 0;
+    mainbox-margin: 0;
+    search-box-margin: 4px 0 8px;
+    list-margin: 0;
+    element-margin: 0;
+
+}

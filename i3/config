@@ -7,7 +7,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id xfsettingsd --replace --sm-client-disable
 exec --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh ~/.config/i3/scripts/current_wallpaper ~/.config/i3/wallpaper
+exec_always --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh ~/.local/share/wallpapers ~/.config/state/wallpaper/current_wallpaper 
 exec --no-startup-id xfwm4 --compositor=off
 exec --no-startup-id ~/.config/picom/picom.sh
 exec --no-startup-id playerctld daemon
@@ -50,7 +50,8 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+Mod1+Shift+p exec --no-startup-id polybar-msg cmd restart
 bindsym $mod+b exec --no-startup-id polybar-msg cmd toggle
 # randomize wallpaper
-bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh ~/.config/i3/scripts/current_wallpaper ~/.config/i3/wallpaper
+bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh ~/.config/i3/wallpapers ~/.config/i3/scripts/current_wallpaper 
+
 
 # tab binds
 bindsym $mod+f fullscreen toggle
