@@ -1,0 +1,188 @@
+@theme "~/.config/rofi/theme.rasi"
+window{
+    background-color: @window-bg;
+    text-color: @window-fg;
+    border: @window-border-width;
+    border-color: @window-border-color;
+    border-radius: @window-radius;
+
+    padding:@window-padding;
+    margin:@window-margin;
+    fullscreen: false;
+    width : 64%;
+    height : 56%;
+}
+mainbox{
+    children : [inputbar, listview, mode-switcher];
+
+    background-color: @mainbox-bg;
+    text-color: @mainbox-fg;
+    border: @mainbox-border-width;
+    border-color: @mainbox-border-color;
+    border-radius: @mainbox-radius;
+
+    padding:@mainbox-padding;
+    margin:@mainbox-margin;
+}
+listview {
+    background-color: @list-bg;
+    text-color: @list-fg;
+    border: @list-border-width;
+    border-color: @list-border-color;
+    border-radius: @list-radius;
+
+    padding:@list-padding;
+    margin:@list-margin;
+}
+element {
+    background-color: transparent;
+    text-color: @element-fg;
+    border: @element-border-width;
+    border-color: @element-border-color;
+    border-radius: @element-radius;
+
+    margin:@element-margin;
+    spacing: 0;
+    padding : 12px;
+    height:256px;
+
+    children : [element-icon, element-text];
+}
+element-text{
+    vertical-align : 0.5;
+
+    background-color: @normal-element-bg;
+    text-color: @normal-element-fg;
+    border: @normal-element-border-width;
+    border-color: @normal-element-border-color;
+    border-radius: @normal-element-radius;
+}
+element-icon{
+    vertical-align : 0.5;
+    background-color: @element-icon-bg;
+}
+element normal.normal{
+    background-color: @normal-element-bg;
+    text-color: @normal-element-fg;
+    border: @normal-element-border-width;
+    border-color: @normal-element-border-color;
+    border-radius: @normal-element-radius;
+
+}
+element alternate.normal{
+    background-color: @alternate-element-bg;
+    text-color: @alternate-element-fg;
+    border: @alternate-element-border-width;
+    border-color: @alternate-element-border-color;
+    border-radius: @alternate-element-radius;
+
+}
+element selected.normal,
+element alternate.selected.normal{
+    background-color: @selected-element-bg;
+    text-color: @selected-element-fg;
+    border: @selected-element-border-width;
+    border-color: @selected-element-border-color;
+    border-radius: @selected-element-radius;
+}
+element-text {
+    background-color: @element-bg;
+    text-color: @element-fg;
+    border: @element-border-width;
+    border-color: @element-border-color;
+    border-radius: @element-radius;
+}
+element-text normal.normal{
+    background-color: @normal-element-bg;
+    text-color: @normal-element-fg;
+    border: @normal-element-border-width;
+    border-color: @normal-element-border-color;
+    border-radius: @normal-element-radius;
+
+    padding:@element-padding;
+    margin:@element-margin;
+}
+element-text alternate.normal{
+    background-color: @alternate-element-bg;
+    text-color: @alternate-element-fg;
+    border: @alternate-element-border-width;
+    border-color: @alternate-element-border-color;
+    border-radius: @alternate-element-radius;
+
+    padding:@element-padding;
+    margin:@element-margin;
+}
+element-text selected.normal,
+element-text alternate.selected.normal{
+    background-color: @selected-element-bg;
+    text-color: @selected-element-fg;
+    border: @selected-element-border-width;
+    border-color: @selected-element-border-color;
+    border-radius: @selected-element-radius;
+}
+element-icon selected.normal,
+element-icon alternate.selected.normal{
+    background-color: @selected-element-bg;
+    text-color: @selected-element-fg;
+}
+inputbar {
+    background-color: @search-box-bg;
+    text-color: @search-box-fg;
+    border: @search-box-border-width;
+    border-color: @search-box-border-color;
+    border-radius: @search-box-radius;
+
+    padding: @search-box-padding;
+    margin: @search-box-margin;
+}
+search-box{
+    background-color: @search-box-bg;
+    text-color: @search-box-fg;
+    border: @search-box-border-width;
+    border-color: @search-box-border-color;
+    children : [ entry ];
+}
+entry{
+    background-color: @search-box-bg;
+    placeholder: @search-box-placeholder;
+    placeholder-color: @search-box-fg;
+    text-color: @search-box-fg;
+    placeholder : "Search";
+    vertical-align : 0.5;
+}
+prompt{
+    background-color: @prompt-bg;
+    placeholder-color: @prompt-bg;
+    text-color: @prompt-fg;
+    padding : 4px;
+    margin : 0 8px;
+}
+num-rows{
+    background-color: @search-box-bg;
+    text-color:@search-box-fg;
+}
+num-filtered-rows{
+    background-color: @search-box-bg;
+    text-color:@search-box-fg;
+}
+case-indicator{
+    background-color: @search-box-bg;
+    text-color:@search-box-fg;
+}
+mode-switcher{
+    spacing : 0;
+}
+button {
+    background-color: @button-bg;
+    text-color: @button-fg;
+    border: @button-border-width;
+    border-color: @button-border-color;
+    border-radius: @button-radius;
+}
+button selected {
+    background-color: @selected-button-bg;
+    text-color: @selected-button-fg;
+    border: @selected-button-border-width;
+    border-color: @selected-button-border-color;
+    border-radius: @selected-button-radius;
+}

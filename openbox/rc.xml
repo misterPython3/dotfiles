@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Bear2</name>
+    <name>openbox_theme</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -120,15 +120,17 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>6</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>Browser</name>
-      <name>Terminal</name>
-      <name>Runtime Terminal</name>
-      <name>Background</name>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+      <name>5</name>
+      <name>6</name>
     </names>
-    <popupTime>300</popupTime>
+    <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -179,6 +181,337 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
+    <!-- Custom Keys -->
+    <keybind key="W-Up">
+      <action name="Unmaximize"/>
+      <action name="Maximize">
+        <direction>horizontal</direction>
+      </action>
+      <action name="MoveResizeTo">
+        <height>50%</height>
+      </action>
+      <action name="MoveToEdgeNorth"/>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="MoveToEdgeNorth"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="Unmaximize"/>
+      <action name="Maximize">
+        <direction>horizontal</direction>
+      </action>
+      <action name="MoveResizeTo">
+        <height>50%</height>
+      </action>
+      <action name="MoveToEdgeSouth"/>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="MoveToEdgeSouth"/>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="Unmaximize"/>
+      <action name="Maximize">
+        <direction>vertical</direction>
+      </action>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="Unmaximize"/>
+      <action name="Maximize">
+        <direction>vertical</direction>
+      </action>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeEast"/>
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="MoveToEdgeEast"/>
+    </keybind>
+    <keybind key="W-a">
+      <action name="ToggleAlwaysOnTop"/>
+    </keybind>
+    <keybind key="W-f">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="W-S-f">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Execute">
+        <command>rofi -no-lazy-grab -application-fallback-icon "/usr/share/icons/Adwaita/scalable/categories/applications-system-symbolic.svg" -show drun</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-r">
+      <action name="Execute">
+        <command>~/.config/rofi/custom/launch-combi.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute">
+        <command>dex /usr/share/applications/Alacritty.desktop</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-w">
+      <action name="Execute">
+        <command>~/.config/i3/scripts/random_wallpaper.sh ~/.local/share/wallpapers ~/.local/state/wallpaper/current_wallpaper</command>
+      </action>
+    </keybind>
+    <keybind key="W-w">
+      <action name="Execute">
+	  <command>~/.config/rofi/custom/wallpaper/launch.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-plus">
+      <action name="ResizeRelative">
+        <top>5</top>
+        <right>5</right>
+        <left>5</left>
+        <bottom>5</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-minus">
+      <action name="ResizeRelative">
+        <top>-5</top>
+        <right>-5</right>
+        <left>-5</left>
+        <bottom>-5</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-S-plus">
+      <action name="ResizeRelative">
+        <top>1</top>
+        <right>1</right>
+        <left>1</left>
+        <bottom>1</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-S-minus">
+      <action name="ResizeRelative">
+        <top>-1</top>
+        <right>-1</right>
+        <left>-1</left>
+        <bottom>-1</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-C-Up">
+      <action name="ResizeRelative">
+        <top>5</top>
+      </action>
+    </keybind>
+    <keybind key="W-C-Down">
+      <action name="ResizeRelative">
+        <bottom>5</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-C-Left">
+      <action name="ResizeRelative">
+        <left>5</left>
+      </action>
+    </keybind>
+    <keybind key="W-C-Right">
+      <action name="ResizeRelative">
+        <right>5</right>
+      </action>
+    </keybind>
+    <keybind key="W-S-C-Up">
+      <action name="ResizeRelative">
+        <bottom>-5</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-S-C-Down">
+      <action name="ResizeRelative">
+        <top>-5</top>
+      </action>
+    </keybind>
+    <keybind key="W-S-C-Left">
+      <action name="ResizeRelative">
+        <right>-5</right>
+      </action>
+    </keybind>
+    <keybind key="W-S-C-Right">
+      <action name="ResizeRelative">
+        <left>-5</left>
+      </action>
+    </keybind>
+    <keybind key="W-c">
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+      </action>
+    </keybind>
+    <keybind key="W-S-c">
+      <action name="Unmaximize"/>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+        <width>75%</width>
+        <height>75%</height>
+      </action>
+    </keybind>
+    <keybind key="W-h">
+      <action name="MoveRelative">
+        <x>-5</x>
+      </action>
+    </keybind>
+    <keybind key="W-j">
+      <action name="MoveRelative">
+        <y>+5</y>
+      </action>
+    </keybind>
+    <keybind key="W-k">
+      <action name="MoveRelative">
+        <y>-5</y>
+      </action>
+    </keybind>
+    <keybind key="W-l">
+      <action name="MoveRelative">
+        <x>+5</x>
+      </action>
+    </keybind>
+    <keybind key="W-S-h">
+      <action name="MoveRelative">
+        <x>-1</x>
+      </action>
+    </keybind>
+    <keybind key="W-S-j">
+      <action name="MoveRelative">
+        <y>+1</y>
+      </action>
+    </keybind>
+    <keybind key="W-S-k">
+      <action name="MoveRelative">
+        <y>-1</y>
+      </action>
+    </keybind>
+    <keybind key="W-S-l">
+      <action name="MoveRelative">
+        <x>+1</x>
+      </action>
+    </keybind>
+    <keybind key="W-C-r">
+      <action name="Execute">
+        <command>openbox --reconfigure</command>
+      </action>
+    </keybind>
+    <keybind key="W-m">
+      <action name="ToggleDecorations"/>
+    </keybind>
+    <keybind key="W-1">
+      <action name="GoToDesktop">
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop">
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop">
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-5">
+      <action name="GoToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="W-6">
+      <action name="GoToDesktop">
+        <to>6</to>
+      </action>
+    </keybind>
+    <keybind key="W-7">
+      <action name="GoToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
+    <keybind key="W-8">
+      <action name="GoToDesktop">
+        <to>8</to>
+      </action>
+    </keybind>
+    <keybind key="W-9">
+      <action name="GoToDesktop">
+        <to>9</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-1">
+      <action name="SendToDesktop">
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop">
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop">
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-4">
+      <action name="SendToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-5">
+      <action name="SendToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-6">
+      <action name="SendToDesktop">
+        <to>6</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-7">
+      <action name="SendToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-8">
+      <action name="SendToDesktop">
+        <to>8</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-9">
+      <action name="SendToDesktop">
+        <to>9</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-q">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>playerctl prev</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <!-- End Custom Keys -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
@@ -203,50 +536,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Left">
-      <action name="SendToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Right">
-      <action name="SendToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-F1">
-      <action name="GoToDesktop">
-        <to>1</to>
-      </action>
-    </keybind>
-    <keybind key="W-F2">
-      <action name="GoToDesktop">
-        <to>2</to>
-      </action>
-    </keybind>
-    <keybind key="W-F3">
-      <action name="GoToDesktop">
-        <to>3</to>
-      </action>
-    </keybind>
-    <keybind key="W-F4">
-      <action name="GoToDesktop">
-        <to>4</to>
-      </action>
-    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -267,7 +556,7 @@
     <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
-        <command>scrot -s</command>
+        <command>~/.config/openbox/screenshot-select.sh</command>
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
@@ -310,27 +599,6 @@
         <to>previous</to>
       </action>
     </keybind>
-    <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows">
-        <direction>right</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows">
-        <direction>left</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows">
-        <direction>up</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows">
-        <direction>down</direction>
-      </action>
-    </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
@@ -344,7 +612,7 @@
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot</command>
+        <command>~/.config/openbox/screenshot-full.sh</command>
       </action>
     </keybind>
   </keyboard>
@@ -353,7 +621,7 @@
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>500</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
-    <screenEdgeWarpTime>400</screenEdgeWarpTime>
+    <screenEdgeWarpTime>0</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
        screen while moving a window, in milliseconds (1000 = 1 second).
        Set this to 0 to disable warping -->
@@ -371,12 +639,18 @@
       <mousebind button="A-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
+      <mousebind button="W-Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
       <mousebind button="A-Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
       <mousebind button="A-Right" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+      <mousebind button="W-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
       <mousebind button="A-Middle" action="Press">
@@ -420,7 +694,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action name="ToggleMaximizeFull"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
@@ -607,32 +881,12 @@
       </mousebind>
     </context>
     <context name="Desktop">
-      <mousebind button="Up" action="Click">
+      <mousebind button="W-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
         </action>
       </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="C-A-Down" action="Click">
+      <mousebind button="W-Down" action="Click">
         <action name="GoToDesktop">
           <to>next</to>
         </action>
@@ -710,6 +964,9 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
+    <application class="*">
+      <decor>no</decor>
+    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.

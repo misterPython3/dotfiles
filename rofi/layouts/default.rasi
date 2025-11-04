@@ -10,6 +10,9 @@ element{
 element-text{
     vertical-align: 0.5;
 }
+entry{
+    vertical-align : 0.5;
+}
 prompt{
     enabled: false;
 }

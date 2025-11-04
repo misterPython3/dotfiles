@@ -6,24 +6,30 @@ import subprocess as sbp
 import shlex
 import string
 
+WALLPAPER_PATH = os.getenv("WALLPAPER_PATH")
+if WALLPAPER_PATH is None or WALLPAPER_PATH == "" or not os.path.isdir(WALLPAPER_PATH):
+    WALLPAPER_PATH = "~/Downloads"
+WALLPAPER_PATH = os.path.expanduser(WALLPAPER_PATH)
 if len(sys.argv) > 1:
-    wallpaper = f"{os.getenv("ROFI_INFO")}/{sys.argv[1]}"
+    wallpaper = f"{WALLPAPER_PATH}/{sys.argv[1]}"
     sbp.run(
         shlex.split(
             f'xwallpaper --tile "{wallpaper}"'
-        )
+        ),
+        stdout=sbp.DEVNULL
     )
     sbp.run(
-        shlex.split(
-            f"ln -sf {wallpaper} /home/genes/.local/state/wallpaper/current_wallpaper"
-        )
+        [
+            "ln",
+            "-sf",
+            wallpaper,
+            os.path.expanduser('~/.local/state/wallpaper/current_wallpaper')
+        ],
+        stdout=sbp.DEVNULL
     )
     exit(0)
-WALLPAPER_PATH = os.getenv("WALLPAPER_PATH")
-if WALLPAPER_PATH == None or WALLPAPER_PATH == "" or not os.path.isdir(WALLPAPER_PATH):
-    WALLPAPER_PATH = os.path.expanduser("~/Downloads")
 
-rofi_t = string.Template(f"$text\0icon\x1f{WALLPAPER_PATH}/$icon\x1finfo\x1f{WALLPAPER_PATH}\n")
+rofi_t = string.Template(f"$text\0icon\x1f{WALLPAPER_PATH}/$icon\n")
 os.chdir(WALLPAPER_PATH)
 filetypes = ["*.png", "*.jpg", "*.jpeg"]
 files = []

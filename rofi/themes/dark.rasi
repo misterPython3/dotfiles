@@ -1,100 +1,90 @@
-configuration {
-    kb-cancel:"Super+d,Escape";
-    modes : [combi]; 
-    show-icons: true;
-    modi: "drun,run";
-    font: "Iosevka 15";
-    sidebar-mode : true;
-    timeout {
-	action: "kb-cancel";
-	delay: 0;
-    }
-    filebrowser {
-	directories-first: true;
-	sorting-method: "name";
-    }
-}
-window {
-    background-color:#2C2A3FE8;
-    border-color:#423F6480;
+* {
+    theme-dark:#000000;
+    theme-light:#FFFFFF;
+    theme-mark-dark:#3F3F38;
+    theme-mark-light:#FDFEE0;
+    item-padding:4px;
 
-    width:50%;
-    border:0;
-    border:1px;
-    border-radius:18px;
-    padding:16px 16px;
-}
-mainbox{
-    background-color:transparent;
+    window-bg: @theme-dark;
+    window-fg: @theme-light;
+    window-border-color: #FFF;
 
-    border-radius:8px;
-    margin:4px;
-}
-num-rows{
-    text-color:#F0E0FF;
-}
-num-filtered-rows{
-    text-color:#F0E0FF;
-}
-button{
-    background-color:#433E58;
-    text-color:#EED8FF;
-}
-button selected{
-    background-color:#EED8FF;
-    text-color:#433E58;
-}
-entry{
-    text-color:#EED8FF;
-    placeholder-color:#EED8FF;
-}
-prompt{
-    text-color:#EED8FF;
-}
-inputbar{
-    text-color:#EED8FF;
-    border-color:#A496AE;
-
-    padding:6px 1%;
-    border:2px;
-    border-radius:44%;
-    margin:0 0 5px 0;
-}
-scrollbar{
-    background-color:#443A5A;
-    handle-color:#847690;
+    mainbox-bg: @theme-dark;
+    mainbox-fg: @theme-light;
+    mainbox-border-color: #FFF;
     
-    border-radius:4px;
-}
-listview {
-    lines : 8;
-    border:0;
-    padding:6px 8px;
-    spacing:4px;
-    margin:6px 12px;
-}
-element{
-    padding:8px 1.5%;
-    border:1px;
-    border-radius:12px;
-    border-color:#998AAA;
-}
-element alternate.normal{
-    background-color:#655A7FA4;
-}
-element normal.normal{
-    background-color:#655A7FA4;
-}
-element selected.normal {
-    background-color:#524D78;
-    border-color:#EFC0F8;
-}
-element-icon{
-    size:30px;
-    margin:0 3px 0 0;
-}
-element-text{
-    font:"Iosevka 17";
-    text-style:bold;
-    text-color:#F0E0FF;
+    search-box-bg: @theme-dark;
+    search-box-fg: @theme-light;
+    search-box-border-color: #FFF;
+
+    prompt-bg: @theme-light;
+    prompt-fg: @theme-dark;
+
+    list-bg: @theme-dark;
+    list-fg: @theme-light;
+    list-border-color: #FFF;
+
+    element-bg: @theme-dark;
+    element-fg: @theme-light;
+    element-border-color: #FFF;
+
+    normal-element-bg: @theme-dark;
+    normal-element-fg: @theme-light;
+    normal-element-border-color: #FFF;
+
+    alternate-element-bg: @theme-dark;
+    alternate-element-fg: @theme-light;
+    alternate-element-border-color: #FFF;
+
+    selected-element-bg: @theme-light;
+    selected-element-fg: @theme-dark;
+    selected-element-border-color: @theme-light;
+    selected-element-border-width: 0;
+    selected-element-radius: 0;
+
+    button-bg: @theme-dark;
+    button-fg: @theme-light;
+    button-border-color: #FFF;
+
+    selected-button-bg: @theme-dark;
+    selected-button-fg: @theme-light;
+    selected-button-border-color: #FFF;
+
+    element-icon-bg: @theme-dark;
+    element-icon-size: 1.25em;
+
+    search-box-placeholder: "Search Application";
+
+    window-border-width: 0;
+    mainbox-border-width: 0;
+    search-box-border-width: 0;
+    element-border-width: 0;
+    list-border-width: 0;
+    normal-element-border-width: 0;
+    alternate-element-border-width: 0;
+    button-border-width: 0;
+    selected-button-border-width: 0;
+
+    window-radius: 0;
+    mainbox-radius: 0;
+    search-box-radius: 0;
+    list-radius: 0;
+    element-radius: 0;
+    normal-element-radius: 0;
+    alternate-element-radius: 0;
+    button-radius: 0;
+    selected-button-radius: 0;
+
+    window-padding: 2%;
+    mainbox-padding: 0;
+    search-box-padding: 0;
+    list-padding: 0;
+    element-padding: @item-padding;
+
+    window-margin: 0;
+    mainbox-margin: 0;
+    search-box-margin: 4px 0 8px;
+    list-margin: 0;
+    element-margin: 0;
+
 }

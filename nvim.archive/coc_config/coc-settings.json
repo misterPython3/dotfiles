@@ -1,0 +1,5 @@
+{
+    "sumneko-lua.enable": true,
+    "sumneko-lua.enableNvimLuaDev": true,
+    "svelte.enable-ts-plugin": true
+}

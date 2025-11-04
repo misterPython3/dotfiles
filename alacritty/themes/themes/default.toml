@@ -1,0 +1,65 @@
+[colors.primary]
+background = "#F0F0F0" 
+foreground = "#040404"
+# dim_foreground = 
+# bright_foreground = 
+
+[colors.cursor]
+text = "#040404"
+cursor = "#E9E9E9"
+
+# [colors.vi_mode_cursor]
+# text = "#"
+# cursor = "#"
+#
+# [colors.search.matches]
+# foreground = 
+# background = 
+#
+# [colors.search.focused_match]
+# foreground = 
+# background = 
+#
+# [colors.footer_bar]
+# foreground = 
+# background = 
+#
+# [colors.hints.start]
+# foreground = 
+# background = 
+#
+# [colors.hints.end]
+# foreground = 
+# background = 
+#
+# [colors.selection]
+# text = 
+# background = 
+#
+[colors.normal]
+black = "#000000"
+red = "#FF0000"
+green = "#00FF00"
+yellow = "#FFFF00"
+blue = "#0000FF"
+magenta = "#FF00FF"
+cyan = "#00FFFF"
+white = "#FFFFFF"
+#
+# [colors.bright]
+# black = 
+# red = 
+# green = 
+# yellow = 
+# blue = 
+# magenta = 
+# cyan = 
+# white = 
+#
+# [[colors.indexed_colors]]
+# index = 16
+# color = 
+#
+# [[colors.indexed_colors]]
+# index = 17
+# color = 

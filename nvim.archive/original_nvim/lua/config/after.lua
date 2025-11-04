@@ -1,0 +1,4 @@
+local vim = vim
+vim.cmd.colorscheme('newpaper')
+vim.g.OmniSharp_server_use_mono = 1
+vim.g.OmniSharp_server_use_net6 = 1

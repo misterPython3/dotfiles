@@ -1,3 +1,3 @@
 
-~/.config/i3/scripts/random_wallpaper.sh ~/.config/i3/wallpapers/ &
-~/.config/polybar/launch.sh &
+xwallpaper --tile ~/.local/state/wallpaper/current_wallpaper
+~/.config/polybar/xworkspace_launch.sh

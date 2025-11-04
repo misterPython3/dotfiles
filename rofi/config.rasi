@@ -56,9 +56,9 @@ entry{
     text-color: @search-box-fg;
 }
 prompt{
-    background-color: @search-box-bg;
-    placeholder-color: @search-box-bg;
-    text-color: @search-box-fg;
+    background-color: @prompt-bg;
+    placeholder-color: @prompt-bg;
+    text-color: @prompt-fg;
 }
 num-rows{
     background-color: @search-box-bg;

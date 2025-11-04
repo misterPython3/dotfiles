@@ -1,9 +1,9 @@
 * {
-    theme-dark:#0F0F08;
+    theme-dark:#20201A;
     theme-light:#DDDEC0;
     theme-mark-dark:#3F3F38;
     theme-mark-light:#FDFEE0;
-    item-padding:4px;
+    item-padding:6px;
 
     window-bg: @theme-dark;
     window-fg: @theme-light;
@@ -16,6 +16,9 @@
     search-box-bg: @theme-dark;
     search-box-fg: @theme-light;
     search-box-border-color: #FFF;
+
+    prompt-bg: @theme-light;
+    prompt-fg: @theme-dark;
 
     list-bg: @theme-dark;
     list-fg: @theme-light;
@@ -43,8 +46,8 @@
     button-fg: @theme-light;
     button-border-color: #FFF;
 
-    selected-button-bg: @theme-dark;
-    selected-button-fg: @theme-light;
+    selected-button-bg: @theme-light;
+    selected-button-fg: @theme-dark;
     selected-button-border-color: #FFF;
 
     element-icon-bg: @theme-dark;

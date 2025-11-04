@@ -1,74 +1,91 @@
 * {
-    window-bg: #FFF;
-    window-fg: #FFF;
-    window-border-color: #FFF;
-    window-border-width: 0;
-    window-radius: 0;
+    theme-dark:#000000;
+    theme-light:#FFFFFF;
+    theme-mark-dark:#3F3F38;
+    theme-mark-light:#FDFEE0;
+    item-padding:4px;
 
-    mainbox-bg: #FFF;
-    mainbox-fg: #FFF;
+    window-bg: @theme-light;
+    window-fg: @theme-dark;
+    window-border-color: @theme-light;
+
+    mainbox-bg: @theme-light;
+    mainbox-fg: @theme-dark;
     mainbox-border-color: #FFF;
-    mainbox-border-width: 0;
-    mainbox-radius: 0;
     
-    search-box-bg: #FFF;
-    search-box-fg: #FFF;
+    search-box-bg: @theme-light;
+    search-box-fg: @theme-dark;
     search-box-border-color: #FFF;
-    search-box-border-width: 0;
-    search-box-radius: 0;
 
-    list-bg: #FFF;
-    list-fg: #FFF;
+    prompt-bg: @theme-dark;
+    prompt-fg: @theme-light;
+
+    list-bg: @theme-light;
+    list-fg: @theme-dark;
     list-border-color: #FFF;
-    list-border-width: 0;
-    list-radius: 0;
 
-    element-bg: #FFF;
-    element-fg: #FFF;
+    element-bg: @theme-light;
+    element-fg: @theme-dark;
     element-border-color: #FFF;
-    element-border-width: 0;
-    element-radius: 0;
 
-    normal-element-bg: #FFF;
-    normal-element-fg: #FFF;
+    normal-element-bg: @theme-light;
+    normal-element-fg: @theme-dark;
     normal-element-border-color: #FFF;
-    normal-element-border-width: 0;
-    normal-element-radius: 0;
 
-    alternate-element-bg: #FFF;
-    alternate-element-fg: #FFF;
+    alternate-element-bg: @theme-light;
+    alternate-element-fg: @theme-dark;
     alternate-element-border-color: #FFF;
-    alternate-element-border-width: 0;
-    alternate-element-radius: 0;
 
-    selected-element-bg: #FFF;
-    selected-element-fg: #FFF;
-    selected-element-border-color: #FFF;
+    selected-element-bg: @theme-dark;
+    selected-element-fg: @theme-light;
+    selected-element-border-color: @theme-light;
     selected-element-border-width: 0;
     selected-element-radius: 0;
 
-    button-bg: #FFF;
-    button-fg: #FFF;
+    button-bg: @theme-light;
+    button-fg: @theme-dark;
     button-border-color: #FFF;
-    button-border-width: 0;
-    button-radius: 0;
 
-    selected-button-bg: #FFF;
-    selected-button-fg: #FFF;
+    selected-button-bg: @theme-light;
+    selected-button-fg: @theme-dark;
     selected-button-border-color: #FFF;
+
+    element-icon-bg: @theme-light;
+    element-icon-size: 1.25em;
+
+    search-box-placeholder: "Search Application";
+
+    window-border-width: 0;
+    mainbox-border-width: 0;
+    search-box-border-width: 0;
+    element-border-width: 0;
+    list-border-width: 0;
+    normal-element-border-width: 0;
+    alternate-element-border-width: 0;
+    button-border-width: 0;
     selected-button-border-width: 0;
+
+    window-radius: 0;
+    mainbox-radius: 0;
+    search-box-radius: 0;
+    list-radius: 0;
+    element-radius: 0;
+    normal-element-radius: 0;
+    alternate-element-radius: 0;
+    button-radius: 0;
     selected-button-radius: 0;
-    
-    window-padding: 0;
+
+    window-padding: 2%;
     mainbox-padding: 0;
     search-box-padding: 0;
     list-padding: 0;
-    element-padding: 0;
+    element-padding: @item-padding;
 
     window-margin: 0;
     mainbox-margin: 0;
-    search-box-margin: 0;
+    search-box-margin: 4px 0 8px;
     list-margin: 0;
     element-margin: 0;
+
 
 }
