@@ -6,7 +6,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id xfsettingsd --replace --sm-client-disable
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/i3_launch.sh
 exec_always --no-startup-id ~/.config/i3/scripts/random_wallpaper.sh ~/.local/share/wallpapers ~/.config/state/wallpaper/current_wallpaper 
 exec --no-startup-id xfwm4 --compositor=off
 exec --no-startup-id ~/.config/picom/picom.sh

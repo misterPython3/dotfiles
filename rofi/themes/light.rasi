@@ -3,7 +3,7 @@
     theme-light:#FFFFFF;
     theme-mark-dark:#3F3F38;
     theme-mark-light:#FDFEE0;
-    item-padding:4px;
+    item-padding:6px;
 
     window-bg: @theme-light;
     window-fg: @theme-dark;
@@ -46,8 +46,8 @@
     button-fg: @theme-dark;
     button-border-color: #FFF;
 
-    selected-button-bg: @theme-light;
-    selected-button-fg: @theme-dark;
+    selected-button-bg: @theme-dark;
+    selected-button-fg: @theme-light;
     selected-button-border-color: #FFF;
 
     element-icon-bg: @theme-light;

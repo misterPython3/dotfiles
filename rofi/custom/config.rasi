@@ -178,6 +178,7 @@ button {
     border: @button-border-width;
     border-color: @button-border-color;
     border-radius: @button-radius;
+    padding : 6px 4px;
 }
 button selected {
     background-color: @selected-button-bg;

@@ -265,7 +265,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-	  <command>~/.config/rofi/custom/wallpaper/launch.sh</command>
+        <command>~/.config/rofi/custom/wallpaper/launch.sh</command>
       </action>
     </keybind>
     <keybind key="W-plus">
@@ -281,6 +281,30 @@
         <top>-5</top>
         <right>-5</right>
         <left>-5</left>
+        <bottom>-5</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-C-plus">
+      <action name="ResizeRelative">
+        <right>5</right>
+        <left>5</left>
+      </action>
+    </keybind>
+    <keybind key="W-C-minus">
+      <action name="ResizeRelative">
+        <right>-5</right>
+        <left>-5</left>
+      </action>
+    </keybind>
+    <keybind key="W-C-S-plus">
+      <action name="ResizeRelative">
+        <top>5</top>
+        <bottom>5</bottom>
+      </action>
+    </keybind>
+    <keybind key="W-C-S-minus">
+      <action name="ResizeRelative">
+        <top>-5</top>
         <bottom>-5</bottom>
       </action>
     </keybind>
@@ -511,6 +535,21 @@
         <command>playerctl next</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>pactl set-sink-volume @DEFAULT_SINK@ -10%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>pactl set-sink-volume @DEFAULT_SINK@ +10%</command>
+      </action>
+    </keybind>
     <!-- End Custom Keys -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
@@ -614,6 +653,11 @@
       <action name="Execute">
         <command>~/.config/openbox/screenshot-full.sh</command>
       </action>
+    </keybind>
+    <keybind key="C-A-Escape">
+	<action name="Execute">
+	    <command>xkill</command>
+	</action>
     </keybind>
   </keyboard>
   <mouse>

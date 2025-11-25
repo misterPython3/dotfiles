@@ -7,6 +7,7 @@ return {
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
 	'L3MON4D3/LuaSnip',
+	'teramako/cmp-cmdline-prompt.nvim',
     },
     config = function()
 
@@ -75,12 +76,30 @@ return {
 
 	cmp.setup.cmdline(':', {
 	    mapping = cmp.mapping.preset.cmdline(),
-	    sources = cmp.config.sources({
-		{ name = 'path' }
-	    }, {
-		{ name = 'cmdline' }
-	    }),
+	    sources = cmp.config.sources(
+		{
+		    { name = 'path' }
+		},
+		{
+		    { name = 'cmdline' }
+		}
+	    ),
 	    matching = { disallow_symbol_nonprefix_matching = false }
+	})
+	cmp.setup.cmdline('@', {
+	    mapping = cmp.mapping.preset.cmdline(),
+	    sources = cmp.config.sources(
+		{
+		    { name = 'path' }
+		},
+		{
+		    { name = 'cmdline-prompt' }
+		}
+	    ),
+	    matching = {
+		disallow_symbol_nonprefix_matching = false,
+		disallow_partial_matching = false,
+	    }
 	})
 
     end

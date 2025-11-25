@@ -1,5 +1,5 @@
 listview {
-    lines : 9;
+    lines : 10;
 }
 button{
     enabled: false;

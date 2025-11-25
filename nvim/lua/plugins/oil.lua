@@ -18,5 +18,6 @@ return {
 	    max_height = 0.64,
 	    border = "single",
 	},
+	delete_to_trash = true,
     },
 }

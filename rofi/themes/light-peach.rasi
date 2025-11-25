@@ -1,56 +1,56 @@
 * {
-    theme-dark:#000000;
-    theme-light:#FFFFFF;
+    theme-dark:#6F5540;
+    theme-light:#FFF0DF;
     theme-mark-dark:#3F3F38;
     theme-mark-light:#FDFEE0;
     item-padding:6px;
 
-    window-bg: @theme-dark;
-    window-fg: @theme-light;
-    window-border-color: #FFF;
+    window-bg: @theme-light;
+    window-fg: @theme-dark;
+    window-border-color: @theme-light;
 
-    mainbox-bg: @theme-dark;
-    mainbox-fg: @theme-light;
+    mainbox-bg: @theme-light;
+    mainbox-fg: @theme-dark;
     mainbox-border-color: #FFF;
     
-    search-box-bg: @theme-dark;
-    search-box-fg: @theme-light;
+    search-box-bg: @theme-light;
+    search-box-fg: @theme-dark;
     search-box-border-color: #FFF;
 
-    prompt-bg: @theme-light;
-    prompt-fg: @theme-dark;
+    prompt-bg: @theme-dark;
+    prompt-fg: @theme-light;
 
-    list-bg: @theme-dark;
-    list-fg: @theme-light;
+    list-bg: @theme-light;
+    list-fg: @theme-dark;
     list-border-color: #FFF;
 
-    element-bg: @theme-dark;
-    element-fg: @theme-light;
+    element-bg: @theme-light;
+    element-fg: @theme-dark;
     element-border-color: #FFF;
 
-    normal-element-bg: @theme-dark;
-    normal-element-fg: @theme-light;
+    normal-element-bg: @theme-light;
+    normal-element-fg: @theme-dark;
     normal-element-border-color: #FFF;
 
-    alternate-element-bg: @theme-dark;
-    alternate-element-fg: @theme-light;
+    alternate-element-bg: @theme-light;
+    alternate-element-fg: @theme-dark;
     alternate-element-border-color: #FFF;
 
-    selected-element-bg: @theme-light;
-    selected-element-fg: @theme-dark;
+    selected-element-bg: @theme-dark;
+    selected-element-fg: @theme-light;
     selected-element-border-color: @theme-light;
     selected-element-border-width: 0;
     selected-element-radius: 0;
 
-    button-bg: @theme-dark;
-    button-fg: @theme-light;
+    button-bg: @theme-light;
+    button-fg: @theme-dark;
     button-border-color: #FFF;
 
     selected-button-bg: @theme-dark;
     selected-button-fg: @theme-light;
     selected-button-border-color: #FFF;
 
-    element-icon-bg: @theme-dark;
+    element-icon-bg: @theme-light;
     element-icon-size: 1.25em;
 
     search-box-placeholder: "Search Application";
@@ -86,5 +86,6 @@
     search-box-margin: 4px 0 8px;
     list-margin: 0;
     element-margin: 0;
+
 
 }
