@@ -7,5 +7,14 @@ normal = { family = "FantasqueSansM Nerd Font", style = "Regular"}
 size = 11.75
 [keyboard]
 bindings = [
-
+	{ key = "|",mods = "Control | Shift", chars = "\u001B[124;6u" },
+	{ key = "\\",mods = "Control | Shift", chars = "\u001B[124;6u" },
+	{ key = "Q",mods = "Control | Shift", chars = "\u001B[81;6u" },
+	{ key = "{",mods = "Alt | Shift", chars = "\u001B{" },
+	{ key = "}",mods = "Alt | Shift", chars = "\u001B}" },
+	{ key = "[",mods = "Control", chars = "\u001B[91;5u" },
+	{ key = "]",mods = "Control", chars = "\u001B[93;5u" },
+	{ key = "Tab",mods = "Control", chars = "\u001B[9;5u" },
+	{ key = "Tab",mods = "Control | Shift", chars = "\u001B[9;6u" },
 ]
+

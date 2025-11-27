@@ -1,5 +1,5 @@
 local M = {}
-M.push = function(dest, src)
+M.extend = function(dest, src)
 	for key,value in pairs(src) do
 		rawset(dest,key,value)
 	end

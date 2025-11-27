@@ -258,6 +258,11 @@
         <command>dex /usr/share/applications/Alacritty.desktop</command>
       </action>
     </keybind>
+    <keybind key="W-S-t">
+      <action name="Execute">
+        <command>alacritty -e tmux</command>
+      </action>
+    </keybind>
     <keybind key="W-S-w">
       <action name="Execute">
         <command>~/.config/i3/scripts/random_wallpaper.sh ~/.local/share/wallpapers ~/.local/state/wallpaper/current_wallpaper</command>
@@ -655,9 +660,9 @@
       </action>
     </keybind>
     <keybind key="C-A-Escape">
-	<action name="Execute">
-	    <command>xkill</command>
-	</action>
+      <action name="Execute">
+        <command>xkill</command>
+      </action>
     </keybind>
   </keyboard>
   <mouse>

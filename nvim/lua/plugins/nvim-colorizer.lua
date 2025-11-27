@@ -1,11 +1,11 @@
 return {
-    "catgoose/nvim-colorizer.lua",
-    event = "BufReadPre",
-    opts = {
-	user_default_options = {
-	    RRGGBBAA = true,
-	    css = true,
-	    always_update = true,
+	"catgoose/nvim-colorizer.lua",
+	event = "BufReadPre",
+	opts = {
+		user_default_options = {
+			RRGGBBAA = true,
+			css = true,
+			always_update = true,
+		},
 	},
-    },
 }
